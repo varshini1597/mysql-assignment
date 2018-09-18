@@ -1,0 +1,57 @@
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| VARSHINI           |
+| VarshiniCare       |
+| greshancare        |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> select * from physicians;
++------+--------+----------+
+| id   | name   | password |
++------+--------+----------+
+|    1 | varsha | arsh123  |
++------+--------+----------+
+1 row in set (0.00 sec)
+
+mysql> select * from patients;
++-----------+------------+------------+-----------+--------+-------------+--------------+---------+-----------+
+| idpatient | personalno | SecondName | FirstName | Sex    | DateOfBirth | PlaceOfBirth | Place   | physician |
++-----------+------------+------------+-----------+--------+-------------+--------------+---------+-----------+
+|        12 |   90685348 | L          | varsha    | female | 15-02-1997  | bangalore    | manipal | varsha    |
++-----------+------------+------------+-----------+--------+-------------+--------------+---------+-----------+
+1 row in set (0.00 sec)
+
+mysql> select * from consultations;
++-----------+------------+------------+--------+--------+------------+-------------+-----------+---------------+---------+-----------+
+| idconsult | personalno | DOC        | weight | height | diagnostic | selectbones | realscore | maturityscore | boneage | physician |
++-----------+------------+------------+--------+--------+------------+-------------+-----------+---------------+---------+-----------+
+|    123456 |   90685348 | 17-09-2018 |     65 |      6 | breakage   | tibia       |        10 |            15 | 5       | varsha    |
++-----------+------------+------------+--------+--------+------------+-------------+-----------+---------------+---------+-----------+
+1 row in set (0.00 sec)
+
+mysql> select * from bone;
+ERROR 1146 (42S02): Table 'VarshiniCare.bone' doesn't exist
+mysql> select * from bones;
++--------+-------+----------+----------+
+| id     | bone  | stage    | text     |
++--------+-------+----------+----------+
+| 123456 | tibia | breakage | critical |
++--------+-------+----------+----------+
+1 row in set (0.00 sec)
+
+mysql> select * from bonestages;
++----------+-------+----------+
+| id       | name  | stages   |
++----------+-------+----------+
+| breakage | tibia | breakage |
++----------+-------+----------+
+1 row in set (0.00 sec)
+
+mysql> 
